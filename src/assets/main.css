@@ -1,68 +1,10 @@
+@import url('https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&display=swap');
 @import './base.css';
 
-@font-face {
-  font-family: 'Rubik';
-  src: url('./fonts/static/Rubik-Regular.ttf') format("truetype");
-  font-weight: 400;
-}
 
-@font-face {
-  font-family: 'Rubik';
-  src: url('./fonts/static/Rubik-Italic.ttf') format("truetype");
-  font-weight: 400;
-  font-style: italic;
-}
 
-@font-face {
-  font-family: 'Rubik';
-  src: url('./fonts/static/Rubik-Medium.ttf') format("truetype");
-  font-weight: 500;
-}
-
-@font-face {
-  font-family: 'Rubik';
-  src: url('./fonts/Rubik-VariableFont_wght.ttf') format("truetype-variations");
-  font-weight: 400;
-}
-
-@font-face {
-  font-family: 'Rubik';
-  src: url('./fonts/Rubik-Italic-VariableFont_wght.ttf') format("truetype-variations");
-  font-weight: 400;
-  font-style: italic;
-}
-
-#app {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
+body {
   font-weight: normal;
   font-family: 'Rubik', sans-serif;
 }
 
-a,
-.green {
-  text-decoration: none;
-  color: hsla(160, 100%, 37%, 1);
-  transition: 0.4s;
-  padding: 3px;
-}
-
-@media (hover: hover) {
-  a:hover {
-    background-color: hsla(160, 100%, 37%, 0.2);
-  }
-}
-
-@media (min-width: 1024px) {
-  body {
-    display: flex;
-    place-items: center;
-  }
-
-  #app {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    padding: 0 2rem;
-  }
-}
