@@ -9,7 +9,7 @@ import TheWelcome from './components/TheWelcome.vue'
 
     <div class="wrapper">
       <HelloWorld msg="You did it!" />
-      <button class="btn btn-outline-primary btn-sm">Test</button>
+      <button class="btn btn-primary">Test</button>
     </div>
   </header>
 
