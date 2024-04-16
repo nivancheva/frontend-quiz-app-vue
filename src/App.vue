@@ -10,13 +10,13 @@ import Toggle from './components/Toggle.vue'
   </div>
 
   <div class="row main-content">
-    <header class="col-md">
-      <h1>Welcome to the <span class="d-block">Frontend Quiz!</span></h1>
-      <p class="fst-italic fs-6">Pick a subject to get started.</p>
+    <header class="col-md title-container">
+      <h1 class="title">Welcome to the <span class="d-block mb-3">Frontend Quiz!</span></h1>
+      <p class="fst-italic fs-6 sub-title">Pick a subject to get started.</p>
     </header>
 
     <div class="d-grid gap-4 col-md">
-      <button class="btn btn-primary d-flex align-self-center gap-3 btn-quiz">
+      <button class="btn btn-primary d-flex align-items-center gap-3 btn-quiz">
         <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" fill="none" viewBox="0 0 40 40"><path fill="#FF7E35" d="M24.508 7.607a1.25 1.25 0 0 1 .634 1.65l-10 22.5a1.25 1.25 0 1 1-2.284-1.015l10-22.5a1.251 1.251 0 0 1 1.65-.635ZM10.832 13.44a1.249 1.249 0 0 1 .1 1.765L6.674 20l4.263 4.795a1.25 1.25 0 1 1-1.87 1.66l-5-5.625a1.25 1.25 0 0 1 0-1.66l5-5.625a1.25 1.25 0 0 1 1.764-.105Zm18.337 0a1.25 1.25 0 0 1 1.765.105l5 5.625a1.25 1.25 0 0 1 0 1.66l-5 5.625a1.25 1.25 0 1 1-1.87-1.66L33.327 20l-4.262-4.795a1.25 1.25 0 0 1 .105-1.765Z"/></svg>
         <p>HTML</p>
       </button>
@@ -43,10 +43,28 @@ import Toggle from './components/Toggle.vue'
     margin-top: 3rem;
   }
 
+  .title {
+    color: var(--clr-text)g;
+  }
+
+  .sub-title {
+    color: var(--clr-light-gray)
+  }
+
+  p {
+    margin-bottom: 0
+  }
+
   .btn-quiz {
     background: var(--clr-bg-buttons);
     border: none;
     color: var(--clr-text);
+  }
+
+  @media (max-width:767px) {
+    .title-container {
+      margin-bottom: 4rem;
+    }
   }
 
   @media (min-width:768px) {
