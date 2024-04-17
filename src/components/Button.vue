@@ -33,19 +33,19 @@ const props = defineProps({
 }
 
 .icon-HTML {
-    background: var(--clr-red-a);
+    background: var(--clr-html);
 }
 
 .icon-CSS {
-    background: var(--clr-green-a);
+    background: var(--clr-css);
 }
 
 .icon-JavaScript {
-    background: var(--clr-blue-a);
+    background: var(--clr-js);
 }
 
 .icon-Accessibility {
-    background: var(--clr-purple-a);
+    background: var(--clr-a);
 }
 
 </style>

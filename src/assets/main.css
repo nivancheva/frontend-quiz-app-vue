@@ -6,24 +6,26 @@
   --clr-gray-navy: rgb(59, 77, 102);
   --clr-light-gray: rgb(98, 108, 127);
   --clr-blue: rgba(171, 193, 225,);
-  --clr-blue-a: rgba(171, 193, 225, .1);
   --clr-light: rgb(244, 246, 250);
-  --clr-purple: rgb(167, 41, 245);
-  --clr-purple-a: rgba(167, 41, 245, .1);
+  --clr-purple: rgb(167, 41, 245, .7);
   --clr-green: rgb(38, 215, 130);
-  --clr-green-a: rgba(38, 215, 130, .1);
   --clr-red: rgb(238, 84, 84);
-  --clr-red-a: rgba(238, 84, 84, .1);
+
+  --clr-html: rgb(255,241,233);
+  --clr-css: rgb(224,253,239);
+  --clr-js: rgb(235,240,255);
+  --clr-a: rgb(246,231,255);
 
   --clr-text: var(--clr-dark-navy);
   --clr-bg-body: var(--clr-light);
-  --clr-bg-buttons: var(--clr-white)
+  --clr-bg-buttons: var(--clr-white);
+
 }
 
 .dark-mode {
   --clr-text: var(--clr-white);
   --clr-bg-body: var(--clr-dark-navy);
-  --clr-bg-buttons: var(--clr-gray-navy)
+  --clr-bg-buttons: var(--clr-gray-navy);
 }
 
 body {
