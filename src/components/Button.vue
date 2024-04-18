@@ -10,7 +10,7 @@ const props = defineProps({
 
 <template>
 
- <button class="btn btn-primary d-flex align-items-center gap-3 btn-quiz">
+ <button class="d-flex align-items-center gap-3 btn-quiz">
     <div :class='["icon", `icon-${title}`]'>
         <img :src="`src/assets/images/` + icon + `.svg`" :alt="title"/>
     </div>
@@ -25,6 +25,8 @@ const props = defineProps({
     border: none;
     color: var(--clr-text);
     font-weight: bold;
+    padding: 1rem;
+    border-radius: 1rem;
 }
 
 .icon {
