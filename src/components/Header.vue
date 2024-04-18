@@ -12,12 +12,12 @@ import Toggle from './Toggle.vue'
 <style scoped>
 
 .nav {
-    margin-top: 3rem;
+    margin-block: 3rem;
 }
 
- @media (min-width:768px) {
+@media (min-width:768px) {
     .nav {
-      margin-top: 5rem;
+      margin-block: 5rem;
     }
  }
 </style>

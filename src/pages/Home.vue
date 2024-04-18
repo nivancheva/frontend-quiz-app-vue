@@ -23,10 +23,6 @@ import quizzes from "../data.json"
 </template>
 
 <style scoped>
-  .main-content {
-    margin-top: 3rem;
-  }
-
   .title {
     color: var(--clr-text)g;
   }
@@ -43,9 +39,7 @@ import quizzes from "../data.json"
   }
 
   @media (min-width:768px) {
-    .main-content {
-      margin-top: 5rem;
-    }
+
 }
 
 </style>

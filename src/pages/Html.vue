@@ -1,9 +1,9 @@
 <script setup>
-
+import Question from '../components/Question.vue'
 </script>
 
 <template>
-  <p class="container">Hi HTML!</p>
+  <Question />
 </template>
 
 <style scoped>
