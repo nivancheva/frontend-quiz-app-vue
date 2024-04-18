@@ -3,7 +3,7 @@
 </script>
 
 <template>
-  <p>Hi Accessibility!</p>
+  <p class="container">Hi Accessibility!</p>
 </template>
 
 <style scoped>

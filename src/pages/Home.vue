@@ -7,10 +7,6 @@ import quizzes from "../data.json"
 
 <template>
 <div class="container">
-  <div class="nav d-flex justify-content-between">
-    <div></div>
-    <Toggle />
-  </div>
 
   <div class="row main-content">
     <header class="col-md title-container">
@@ -27,8 +23,7 @@ import quizzes from "../data.json"
 </template>
 
 <style scoped>
-  .main-content,
-  .nav {
+  .main-content {
     margin-top: 3rem;
   }
 
@@ -48,8 +43,7 @@ import quizzes from "../data.json"
   }
 
   @media (min-width:768px) {
-    .main-content,
-    .nav {
+    .main-content {
       margin-top: 5rem;
     }
 }

@@ -3,6 +3,7 @@ import { reactive, computed } from 'vue'
 const props = defineProps({
   title: String,
   icon: String,
+  url: String
 })
 
 
@@ -10,12 +11,12 @@ const props = defineProps({
 
 <template>
 
- <button class="d-flex align-items-center gap-3 btn-quiz">
+ <router-link :to="{name: url}" class="d-flex align-items-center gap-3 btn-quiz">
     <div :class='["icon", `icon-${title}`]'>
         <img :src="`src/assets/images/` + icon + `.svg`" :alt="title"/>
     </div>
     <p>{{title}}</p>
-</button>
+</router-link>
 
 </template>
 
@@ -27,6 +28,7 @@ const props = defineProps({
     font-weight: bold;
     padding: 1rem;
     border-radius: 1rem;
+    text-decoration: none;
 }
 
 .icon {

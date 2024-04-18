@@ -20,22 +20,22 @@ const routes = [
                 component: Home
             },
             {
-                path:'/Html',
+                path:'/html',
                 name: 'Html',
                 component: Html
             },
             {
-                path:'/Css',
+                path:'/css',
                 name: 'Css',
                 component: Css
             },
             {
-                path:'/JavaScript',
+                path:'/javaScript',
                 name: 'JavaScript',
                 component: JavaScript
             },
             {
-                path:'/Accessibility',
+                path:'/accessibility',
                 name: 'Accessibility',
                 component: Accessibility
             },

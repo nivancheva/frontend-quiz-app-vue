@@ -3,7 +3,7 @@
 </script>
 
 <template>
-  <p>Hi JavaScript!</p>
+  <p class="container">Hi JavaScript!</p>
 </template>
 
 <style scoped>

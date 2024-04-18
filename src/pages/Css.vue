@@ -3,7 +3,7 @@
 </script>
 
 <template>
-  <p>Hi CSS!</p>
+  <p class="container">Hi CSS!</p>
 </template>
 
 <style scoped>
