@@ -1,15 +1,26 @@
 <script setup>
-import questions from '../data.json'
+import { ref, computed } from "vue";
 const props = defineProps({
   subject: Object
 })
+
+const currentQuestion = ref(0);
+
+function submitAnswer() {
+    if (currentQuestion.value < props.subject.questions.length - 1) {
+        currentQuestion.value++;
+        console.log(currentQuestion.value)
+    }
+}
+console.log(currentQuestion.value + 1)
+
 </script>
 
 <template>
   <div class="container question-wrapper">
     <div class="question-container">
-        <p>Question 1 of 10 </p>
-        <h2>What does HTML stand for?</h2>
+        <p>Question {{ currentQuestion + 1 }} of {{ subject.questions.length }}</p>
+        <h2>{{ subject.questions[currentQuestion].question }}</h2>
         <div class="progress-bar">
             <div class="progress"></div>
         </div>
@@ -17,12 +28,12 @@ const props = defineProps({
 
     <div>
         <div>
-            <div class="d-flex">
-                <p>A</p>
-                <p>4.5:1</p>
+            <div v-for="(options, idex) in subject.questions[currentQuestion].options" :key="idex" class="d-flex">
+                <p>{{idex}}</p>
+                <p>{{options}}</p>
             </div>
         </div>
-        <button class="btn btn_submit">Submit Answer</button>
+        <button class="btn btn_submit" @click="submitAnswer">Submit Answer</button>
     </div>
 </div>
 </template>
