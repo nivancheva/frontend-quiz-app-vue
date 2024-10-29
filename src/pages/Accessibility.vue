@@ -1,9 +1,12 @@
 <script setup>
-
+import Question from '../components/Question.vue'
+import questions from '../data.json'
 </script>
 
 <template>
-  <p class="container">Hi Accessibility!</p>
+  <div>
+    <Question :subject="questions[3]"/>
+  </div>
 </template>
 
 <style scoped>
