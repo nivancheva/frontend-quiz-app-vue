@@ -21,15 +21,6 @@ const props = defineProps({
 </template>
 
 <style scoped>
-.btn-quiz {
-    background: var(--clr-bg-buttons);
-    border: none;
-    color: var(--clr-text);
-    font-weight: bold;
-    padding: 1rem;
-    border-radius: 1rem;
-    text-decoration: none;
-}
 
 .icon {
     padding: .5rem;

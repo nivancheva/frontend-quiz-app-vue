@@ -5,6 +5,7 @@ const props = defineProps({
 })
 
 const currentQuestion = ref(0);
+const subAnswer = ref( ['A', 'B', 'C', 'D'])
 
 function submitAnswer() {
     if (currentQuestion.value < props.subject.questions.length - 1) {
@@ -12,7 +13,6 @@ function submitAnswer() {
         console.log(currentQuestion.value)
     }
 }
-console.log(currentQuestion.value + 1)
 
 </script>
 
@@ -27,13 +27,13 @@ console.log(currentQuestion.value + 1)
     </div>
 
     <div>
-        <div>
-            <div v-for="(options, idex) in subject.questions[currentQuestion].options" :key="idex" class="d-flex">
+        <div class="d-grid gap-4 col-md">
+            <div v-for="(options, idex) in subject.questions[currentQuestion].options" :key="idex" class="d-flex align-items-center gap-3 btn-quiz">
                 <p>{{idex}}</p>
                 <p>{{options}}</p>
             </div>
         </div>
-        <button class="btn btn_submit" @click="submitAnswer">Submit Answer</button>
+        <button class="btn btn_submit mt-5" @click="submitAnswer">Submit Answer</button>
     </div>
 </div>
 </template>
