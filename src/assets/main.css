@@ -8,6 +8,7 @@
   --clr-blue: rgba(171, 193, 225,);
   --clr-light: rgb(244, 246, 250);
   --clr-purple: rgb(167, 41, 245, .7);
+  --clr-purple-light: rgb(167, 41, 245, .3);
   --clr-green: rgb(38, 215, 130);
   --clr-red: rgb(238, 84, 84);
 
@@ -53,6 +54,11 @@ p {
   padding: 1rem;
   border-radius: 1rem;
   text-decoration: none;
+}
+
+.btn-quiz:hover,
+.btn-quiz:focus {
+  background-color: var(--clr-purple-light);
 }
 
 .bg-option {

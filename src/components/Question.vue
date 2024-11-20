@@ -1,17 +1,43 @@
 <script setup>
-import { ref, computed } from "vue";
+import { ref, computed, onMounted } from "vue";
 const props = defineProps({
   subject: Object
 })
 
 const currentQuestion = ref(0);
-const subAnswer = ref( ['A', 'B', 'C', 'D'])
+const selectedAnswer = ref(null);
+const answers = ref([]);
+const isSelected = ref(false);
+const subAnswer = ref( ['A', 'B', 'C', 'D']);
+
+onMounted(() => {
+    const savedAnswers = localStorage.getItem('quizAnswers');
+    if (savedAnswers) {
+        answers.value = JSON.parse(savedAnswers);
+    }
+});
 
 function submitAnswer() {
+    if (!isSelected.value) {
+        return; 
+    }
+
+    if (selectedAnswer.value !== null) {
+        answers.value[currentQuestion.value] = selectedAnswer.value;     
+    }
+
+    localStorage.setItem('quizAnswers', JSON.stringify(answers.value));
+
     if (currentQuestion.value < props.subject.questions.length - 1) {
         currentQuestion.value++;
-        console.log(currentQuestion.value)
+        selectedAnswer.value = null;
+        isSelected.value = false;
     }
+}
+
+function selectOption(answer) {
+    selectedAnswer.value = answer;
+    isSelected.value = true;
 }
 
 function indexToLetter(index) {
@@ -21,7 +47,7 @@ function indexToLetter(index) {
 function progressBarWidth() {
     const totalSteps = props.subject.questions.length;
     const stepPercentage = 100 / totalSteps;
-    let progress = stepPercentage * (currentQuestion.value + 1);  // Using currentQuestion.value here
+    let progress = stepPercentage * (currentQuestion.value + 1);
     return Math.min(progress, 100);
 }
 
@@ -39,10 +65,10 @@ function progressBarWidth() {
         </div>
 
         <div class="d-grid gap-4 col-md">
-            <div v-for="(options, idex) in subject.questions[currentQuestion].options" :key="idex" class="d-flex align-items-center gap-3 btn-quiz">
+            <button v-for="(options, idex) in subject.questions[currentQuestion].options" :key="idex" @click="selectOption(options)" class="d-flex align-items-center gap-3 btn-quiz">
                 <p class="bg-option option">{{indexToLetter(idex)}}</p>
                 <p>{{options}}</p>
-            </div>
+            </button>
         </div>
 
         <button class="btn btn_submit" @click="submitAnswer">Submit Answer</button>
@@ -87,6 +113,8 @@ function progressBarWidth() {
 .option {
     background: var(--clr-text);
     color: var(--clr-bg-body);
+    width: 40px;
+    aspect-ratio: 1;
 }
 
 @media (max-width:767px) {
