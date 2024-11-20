@@ -17,6 +17,7 @@
   --clr-a: rgb(246,231,255);
 
   --clr-text: var(--clr-dark-navy);
+  --clr-subText: var(--clr-light-gray);
   --clr-bg-body: var(--clr-light);
   --clr-bg-buttons: var(--clr-white);
 
@@ -26,6 +27,7 @@
   --clr-text: var(--clr-white);
   --clr-bg-body: var(--clr-dark-navy);
   --clr-bg-buttons: var(--clr-gray-navy);
+  --clr-subText: rgb(130, 149, 177);
 }
 
 body {
@@ -39,6 +41,10 @@ p {
   margin-bottom: 0
 }
 
+.sub-title {
+  color: var(--clr-subText)
+}
+
 .btn-quiz {
   background: var(--clr-bg-buttons);
   border: none;
@@ -49,5 +55,9 @@ p {
   text-decoration: none;
 }
 
+.bg-option {
+  padding: .5rem;
+  border-radius: .5rem;
+}
 
 

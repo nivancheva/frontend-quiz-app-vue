@@ -10,7 +10,7 @@ import quizzes from "../data.json"
 
   <div class="row main-content">
     <header class="col-md title-container">
-      <h1 class="title">Welcome to the <span class="d-block mb-3">Frontend Quiz!</span></h1>
+      <h1 class="title">Welcome to the <strong class="d-block mb-3">Frontend Quiz!</strong></h1>
       <p class="fst-italic fs-6 sub-title">Pick a subject to get started.</p>
     </header>
 
@@ -26,11 +26,6 @@ import quizzes from "../data.json"
   .title {
     color: var(--clr-text)g;
   }
-
-  .sub-title {
-    color: var(--clr-light-gray)
-  }
-
 
   @media (max-width:767px) {
     .title-container {

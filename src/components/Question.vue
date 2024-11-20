@@ -14,28 +14,40 @@ function submitAnswer() {
     }
 }
 
+function indexToLetter(index) {
+    return String.fromCharCode(65 + index); // 65 is the ASCII code for 'A'
+}
+
+function progressBarWidth() {
+    const totalSteps = props.subject.questions.length;
+    const stepPercentage = 100 / totalSteps;
+    let progress = stepPercentage * (currentQuestion.value + 1);  // Using currentQuestion.value here
+    return Math.min(progress, 100);
+}
+
 </script>
 
 <template>
-  <div class="container question-wrapper">
-    <div class="question-container">
-        <p>Question {{ currentQuestion + 1 }} of {{ subject.questions.length }}</p>
-        <h2>{{ subject.questions[currentQuestion].question }}</h2>
-        <div class="progress-bar">
-            <div class="progress"></div>
-        </div>
-    </div>
 
-    <div>
+    <div class="container question-wrapper">
+        <div class="question-container">
+            <p class="sub-title mb-3">Question {{ currentQuestion + 1 }} of {{ subject.questions.length }}</p>
+            <h2>{{ subject.questions[currentQuestion].question }}</h2>
+            <div class="progress-bar">
+                <div class="progress" :style="{ width: progressBarWidth() + '%' }"></div>
+            </div>
+        </div>
+
         <div class="d-grid gap-4 col-md">
             <div v-for="(options, idex) in subject.questions[currentQuestion].options" :key="idex" class="d-flex align-items-center gap-3 btn-quiz">
-                <p>{{idex}}</p>
+                <p class="bg-option option">{{indexToLetter(idex)}}</p>
                 <p>{{options}}</p>
             </div>
         </div>
-        <button class="btn btn_submit mt-5" @click="submitAnswer">Submit Answer</button>
+
+        <button class="btn btn_submit" @click="submitAnswer">Submit Answer</button>
     </div>
-</div>
+
 </template>
 
 <style scoped>
@@ -61,8 +73,8 @@ function submitAnswer() {
 .progress {
     height: 70%;
     background-color: var(--clr-purple);
-    width: 75%;
     border-radius: .5rem;
+    transition: width 0.3s ease;
 }
 
 .btn_submit {
@@ -70,6 +82,11 @@ function submitAnswer() {
     color: var(--clr-white);
     border-radius: .75rem;
     width: 100%;
+}
+
+.option {
+    background: var(--clr-text);
+    color: var(--clr-bg-body);
 }
 
 @media (max-width:767px) {

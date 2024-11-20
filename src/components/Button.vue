@@ -12,7 +12,7 @@ const props = defineProps({
 <template>
 
  <router-link :to="{name: url}" class="d-flex align-items-center gap-3 btn-quiz">
-    <div :class='["icon", `icon-${title}`]'>
+    <div :class='["bg-option", `icon-${title}`]'>
         <img :src="`src/assets/images/` + icon + `.svg`" :alt="title"/>
     </div>
     <p>{{title}}</p>
@@ -21,11 +21,6 @@ const props = defineProps({
 </template>
 
 <style scoped>
-
-.icon {
-    padding: .5rem;
-    border-radius: .5rem;
-}
 
 .icon-HTML {
     background: var(--clr-html);
