@@ -42,6 +42,15 @@ p {
   margin-bottom: 0
 }
 
+.home-icon {
+  width: 30px;
+  
+}
+
+.home-icon svg {
+  fill: var(--clr-purple);
+}
+
 .sub-title {
   color: var(--clr-subText)
 }
