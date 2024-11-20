@@ -17,6 +17,11 @@
   --clr-js: rgb(235,240,255);
   --clr-a: rgb(246,231,255);
 
+  --clr-html-bg: rgb(240, 223, 214);
+  --clr-css-bg: rgb(205, 236, 221);
+  --clr-js-bg: rgb(193, 201, 224);
+  --clr-a-bg: rgb(222, 202, 233);
+
   --clr-text: var(--clr-dark-navy);
   --clr-subText: var(--clr-light-gray);
   --clr-bg-body: var(--clr-light);
