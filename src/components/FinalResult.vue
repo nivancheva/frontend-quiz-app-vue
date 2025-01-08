@@ -19,7 +19,7 @@ onMounted(() => {
                 </div>
                 <h4 class="m-0">{{quizzes[0].title}}</h4>
             </div>
-            <h1>Quiz completed!<br>You score is </h1>
+            <h1 class="m-0">Quiz completed!<br>You score is </h1>
             <p class="big-fs">{{correctAnswers}}</p>
             <p class="sub-title">out of {{ quizzes[0].questions.length }}</p>        
         </div>
