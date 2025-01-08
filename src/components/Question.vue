@@ -10,6 +10,7 @@ const answers = ref([]);
 const isSelected = ref(false);
 const subAnswer = ref( ['A', 'B', 'C', 'D']);
 let corectAnswers = ref(0);
+const lastQuestion = computed(() => currentQuestion.value == props.subject.questions.length - 1);
 
 onMounted(() => {
     quizState();
@@ -39,10 +40,11 @@ function submitAnswer() {
         isSelected.value = false;
     }
 
-    if (currentQuestion.value == props.subject.questions.length - 1) {
-
+    if (lastQuestion) {
+        localStorage.setItem('correctAnswers', corectAnswers.value);
         console.log(corectAnswers.value)
     }
+
 }
 
 function quizState() {
@@ -89,7 +91,10 @@ function progressBarWidth() {
             </button>
         </div>
 
-        <button class="btn btn_submit" @click="submitAnswer">Submit Answer</button>
+        <button v-if="!lastQuestion" class="btn btn_submit" @click="submitAnswer">Submit Answer</button>
+        <router-link v-else :to="{name: 'TestScore'}" class="btn btn_submit btn_result">
+            <p>See result</p>
+        </router-link>
     </div>
 
 </template>
@@ -126,6 +131,10 @@ function progressBarWidth() {
     color: var(--clr-white);
     border-radius: .75rem;
     width: 100%;
+}
+
+.btn_result {
+    background: var(--clr-red);
 }
 
 .option {

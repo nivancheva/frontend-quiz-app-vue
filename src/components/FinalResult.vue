@@ -1,9 +1,11 @@
 <script setup>
 import { ref, computed, onMounted, onUpdated } from "vue";
 import quizzes from ".././data.json"
-const props = defineProps({
-  corectAnswers: Number
-})
+const correctAnswers = ref("0");
+
+onMounted(() => {
+    correctAnswers.value = localStorage.getItem('correctAnswers');
+});
 
 </script>
 
@@ -18,8 +20,8 @@ const props = defineProps({
                 <h4 class="m-0">{{quizzes[0].title}}</h4>
             </div>
             <h1>Quiz completed!<br>You score is </h1>
-            <p class="big-fs">6</p>
-            <p class="sub-title">out of 10</p>        
+            <p class="big-fs">{{correctAnswers}}</p>
+            <p class="sub-title">out of {{ quizzes[0].questions.length }}</p>        
         </div>
     </div>
 
