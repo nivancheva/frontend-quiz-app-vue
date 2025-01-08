@@ -24,7 +24,7 @@ import quizzes from "../data.json"
 
 <style scoped>
   .title {
-    color: var(--clr-text)g;
+    color: var(--clr-text);
   }
 
   @media (max-width:767px) {

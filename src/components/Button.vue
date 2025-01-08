@@ -22,21 +22,7 @@ const props = defineProps({
 
 <style scoped>
 
-.icon-HTML {
-    background: var(--clr-html);
-}
 
-.icon-CSS {
-    background: var(--clr-css);
-}
-
-.icon-JavaScript {
-    background: var(--clr-js);
-}
-
-.icon-Accessibility {
-    background: var(--clr-a);
-}
 
 .btn-HTML:hover,
 .btn-HTML:focus {

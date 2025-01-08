@@ -1,5 +1,5 @@
 <script setup>
-import { ref, computed, onMounted } from "vue";
+import { ref, computed, onMounted, onUpdated } from "vue";
 const props = defineProps({
   subject: Object
 })
@@ -9,12 +9,14 @@ const selectedAnswer = ref(null);
 const answers = ref([]);
 const isSelected = ref(false);
 const subAnswer = ref( ['A', 'B', 'C', 'D']);
+let corectAnswers = ref(0);
 
 onMounted(() => {
-    const savedAnswers = localStorage.getItem('quizAnswers');
-    if (savedAnswers) {
-        answers.value = JSON.parse(savedAnswers);
-    }
+    quizState();
+});
+
+onUpdated(() => {
+    quizState();
 });
 
 function submitAnswer() {
@@ -22,9 +24,12 @@ function submitAnswer() {
         return; 
     }
 
-    if (selectedAnswer.value !== null) {
-        answers.value[currentQuestion.value] = selectedAnswer.value;     
+    answers.value[currentQuestion.value] = selectedAnswer.value;
+
+    if (selectedAnswer.value === props.subject.questions[currentQuestion.value].answer) {
+        corectAnswers.value ++;
     }
+  
 
     localStorage.setItem('quizAnswers', JSON.stringify(answers.value));
 
@@ -32,6 +37,19 @@ function submitAnswer() {
         currentQuestion.value++;
         selectedAnswer.value = null;
         isSelected.value = false;
+    }
+
+    if (currentQuestion.value == props.subject.questions.length - 1) {
+
+        console.log(corectAnswers.value)
+    }
+}
+
+function quizState() {
+    const savedAnswers = localStorage.getItem('quizAnswers');
+    console.log(savedAnswers)
+    if (savedAnswers) {
+        answers.value = JSON.parse(savedAnswers);
     }
 }
 

@@ -6,6 +6,7 @@ import Html from '../pages/Html.vue'
 import Css from '../pages/Css.vue'
 import JavaScript from '../pages/JavaScript.vue'
 import Accessibility from '../pages/Accessibility.vue'
+import TestScore from '../pages/TestScore.vue'
 
 const routes = [
     {
@@ -38,6 +39,11 @@ const routes = [
                 path:'/accessibility',
                 name: 'Accessibility',
                 component: Accessibility
+            },
+            {
+                path:'/test-score',
+                name: 'TestScore',
+                component: TestScore
             },
 
         ]
